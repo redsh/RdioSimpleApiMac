@@ -43,7 +43,7 @@ App authorization happens via Safari. Once authorization is granted, Safari reop
 
     }];
     
-    ```
+```
 
 [Rdio Web Service API reference](Calls http://www.rdio.com/developers/docs/web-service/index/)
 
