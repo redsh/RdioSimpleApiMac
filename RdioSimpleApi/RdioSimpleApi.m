@@ -316,7 +316,7 @@ static BOOL secure_store_credentials = TRUE;
 
 - (void)setupWithKey:(NSString*)RDIO_key andSecret:(NSString*)RDIO_secret
 {
-    client = [[AFOAuth1Client alloc]initWithBaseURL:[NSURL URLWithString:@"https://api.rdio.com/"] key:RDIO_key secret:RDIO_secret];
+    client = [[AFOAuth1Client alloc]initWithBaseURL:[NSURL URLWithString:@"http://api.rdio.com/"] key:RDIO_key secret:RDIO_secret];
     
     [client registerHTTPOperationClass:[AFJSONRequestOperation class]];
     
