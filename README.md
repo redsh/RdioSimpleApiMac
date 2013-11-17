@@ -24,8 +24,8 @@ App authorization happens via Safari. Once authorization is granted, Safari reop
  
 
 ```objective-c
-\#include <RdioSimpleApi/RdioSimpleApi.h>
- 	
+#include <RdioSimpleApi/RdioSimpleApi.h>
+... 	
  	[[RdioSimpleApi shared] setupWithKey:@"<YOUR APP's RDIO KEY HERE>" andSecret:@"<YOUR APP SECRET HERE>"];
     
     //Opens a Safari window that asks to connect the app to Rdio. Once authorization is granted, Safari reopens the app using the URL scheme RdioSimpleApiExample://.
@@ -54,16 +54,16 @@ App authorization happens via Safari. Once authorization is granted, Safari reop
 
 
 1. Drag RdioSimpleApi.xcodeproj to the top of the tree of your project.
-[1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/add_proj.png)
+![1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/add_proj.png)
 
 2. Add the framework to your App's 'Target dependencies'.
-[1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/add_dep.png)
+![1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/add_dep.png)
 
 3. Add the framework to your App's 'Linked Frameworks and Libraries'.
-[1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/add_link.png)
+![1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/add_link.png)
  
 4. Drag the framework from 'Linked Frameworks and Libraries' and drop it the 'Frameworks' folder of your App project tree.
-[1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/drag_link.png)
+![1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/drag_link.png)
 
 
 
