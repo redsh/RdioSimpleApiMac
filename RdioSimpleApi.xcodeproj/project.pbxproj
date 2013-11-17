@@ -504,6 +504,7 @@
 					SystemConfiguration,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -527,6 +528,7 @@
 					SystemConfiguration,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

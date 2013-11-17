@@ -13,10 +13,10 @@ App authorization happens via Safari. Once authorization is granted, Safari reop
 	<array>
 		<dict>
             <key>CFBundleURLName</key>
-            <string>Enter the Dragon RDIOLogin</string>
+            <string>Example Rdio Login</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>enterthedragonrdio</string>
+                <string>RdioSimpleApiExample</string>
             </array>
         </dict>
 	</array>

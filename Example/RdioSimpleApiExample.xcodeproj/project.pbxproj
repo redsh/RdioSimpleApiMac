@@ -18,7 +18,7 @@
 		E4091D391837B6A900E4B8CF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4091D181837B6A900E4B8CF /* Cocoa.framework */; };
 		E4091D411837B6A900E4B8CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4091D3F1837B6A900E4B8CF /* InfoPlist.strings */; };
 		E4091D431837B6A900E4B8CF /* RdioSimpleApiExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091D421837B6A900E4B8CF /* RdioSimpleApiExampleTests.m */; };
-		E4091D671837B8AF00E4B8CF /* RdioSimpleApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4091D661837B8AF00E4B8CF /* RdioSimpleApi.framework */; };
+		E4091D721837BAD200E4B8CF /* RdioSimpleApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4091D6F1837BAC700E4B8CF /* RdioSimpleApi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = E4091D141837B6A900E4B8CF;
 			remoteInfo = RdioSimpleApiExample;
+		};
+		E4091D6E1837BAC700E4B8CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4091D691837BAC700E4B8CF /* RdioSimpleApi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4091CA01837B46B00E4B8CF;
+			remoteInfo = RdioSimpleApi;
+		};
+		E4091D701837BAC700E4B8CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4091D691837BAC700E4B8CF /* RdioSimpleApi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4091CB71837B46B00E4B8CF;
+			remoteInfo = RdioSimpleApiTests;
+		};
+		E4091D771838F7DD00E4B8CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4091D691837BAC700E4B8CF /* RdioSimpleApi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4091C9F1837B46B00E4B8CF;
+			remoteInfo = RdioSimpleApi;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,7 +72,7 @@
 		E4091D3E1837B6A900E4B8CF /* RdioSimpleApiExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RdioSimpleApiExampleTests-Info.plist"; sourceTree = "<group>"; };
 		E4091D401837B6A900E4B8CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4091D421837B6A900E4B8CF /* RdioSimpleApiExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdioSimpleApiExampleTests.m; sourceTree = "<group>"; };
-		E4091D661837B8AF00E4B8CF /* RdioSimpleApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RdioSimpleApi.framework; path = ../build/Debug/RdioSimpleApi.framework; sourceTree = "<group>"; };
+		E4091D691837BAC700E4B8CF /* RdioSimpleApi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RdioSimpleApi.xcodeproj; path = ../RdioSimpleApi.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4091D671837B8AF00E4B8CF /* RdioSimpleApi.framework in Frameworks */,
+				E4091D721837BAD200E4B8CF /* RdioSimpleApi.framework in Frameworks */,
 				E4091D191837B6A900E4B8CF /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +100,7 @@
 		E4091D0C1837B6A900E4B8CF = {
 			isa = PBXGroup;
 			children = (
+				E4091D691837BAC700E4B8CF /* RdioSimpleApi.xcodeproj */,
 				E4091D1E1837B6A900E4B8CF /* RdioSimpleApiExample */,
 				E4091D3C1837B6A900E4B8CF /* RdioSimpleApiExampleTests */,
 				E4091D171837B6A900E4B8CF /* Frameworks */,
@@ -98,7 +120,6 @@
 		E4091D171837B6A900E4B8CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E4091D661837B8AF00E4B8CF /* RdioSimpleApi.framework */,
 				E4091D181837B6A900E4B8CF /* Cocoa.framework */,
 				E4091D371837B6A900E4B8CF /* XCTest.framework */,
 				E4091D1A1837B6A900E4B8CF /* Other Frameworks */,
@@ -158,6 +179,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E4091D6A1837BAC700E4B8CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4091D6F1837BAC700E4B8CF /* RdioSimpleApi.framework */,
+				E4091D711837BAC700E4B8CF /* RdioSimpleApiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,6 +202,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E4091D781838F7DD00E4B8CF /* PBXTargetDependency */,
 			);
 			name = RdioSimpleApiExample;
 			productName = RdioSimpleApiExample;
@@ -221,6 +252,12 @@
 			mainGroup = E4091D0C1837B6A900E4B8CF;
 			productRefGroup = E4091D161837B6A900E4B8CF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4091D6A1837BAC700E4B8CF /* Products */;
+					ProjectRef = E4091D691837BAC700E4B8CF /* RdioSimpleApi.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E4091D141837B6A900E4B8CF /* RdioSimpleApiExample */,
@@ -228,6 +265,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4091D6F1837BAC700E4B8CF /* RdioSimpleApi.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RdioSimpleApi.framework;
+			remoteRef = E4091D6E1837BAC700E4B8CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4091D711837BAC700E4B8CF /* RdioSimpleApiTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RdioSimpleApiTests.xctest;
+			remoteRef = E4091D701837BAC700E4B8CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E4091D131837B6A900E4B8CF /* Resources */ = {
@@ -276,6 +330,11 @@
 			isa = PBXTargetDependency;
 			target = E4091D141837B6A900E4B8CF /* RdioSimpleApiExample */;
 			targetProxy = E4091D3A1837B6A900E4B8CF /* PBXContainerItemProxy */;
+		};
+		E4091D781838F7DD00E4B8CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RdioSimpleApi;
+			targetProxy = E4091D771838F7DD00E4B8CF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -391,6 +450,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/redsh/hacks/entrance/EnterTheDragon/RdioSimpleApi/build/Debug,
+					/Users/redsh/hacks/entrance/RdioSimpleApi/build/Debug,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RdioSimpleApiExample/RdioSimpleApiExample-Prefix.pch";
@@ -409,6 +469,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/redsh/hacks/entrance/EnterTheDragon/RdioSimpleApi/build/Debug,
+					/Users/redsh/hacks/entrance/RdioSimpleApi/build/Debug,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RdioSimpleApiExample/RdioSimpleApiExample-Prefix.pch";
