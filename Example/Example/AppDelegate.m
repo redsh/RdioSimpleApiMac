@@ -18,18 +18,20 @@
     //Opens a Safari window that asks to connect the app to Rdio. Once authorization is granted, Safari reopens the app using the URL scheme RdioSimpleApiExample://.
     [[RdioSimpleApi shared] authenticateInBrowserWithURLScheme:@"RdioSimpleApiExample" block:^(RdioSimpleApi *api, NSError *error) {
         
+        [[RdioSimpleApi shared] me:^(NSDictionary *response, NSError *error) {
+            //...
+        }];
+        
+        [[RdioSimpleApi shared] call:@"search" parameters:@{
+                                                            @"query":@"get lucky",
+                                                            @"types":@"Track"
+                                                            } block:^(NSDictionary *response, NSError *error) {
+                                                                //...
+                                                            }];
+
+        
     }];
     
-    [[RdioSimpleApi shared] me:^(NSDictionary *response, NSError *error) {
-        //...
-    }];
-    
-    [[RdioSimpleApi shared] call:@"search" parameters:@{
-                                                        @"query":@"get lucky",
-                                                        @"types":@"Track"
-                                                        } block:^(NSDictionary *response, NSError *error) {
-                                                            //...
-                                                        }];
-}
+  }
 
 @end
