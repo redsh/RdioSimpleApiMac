@@ -19,7 +19,9 @@
     [[RdioSimpleApi shared] authenticateInBrowserWithURLScheme:@"RdioSimpleApiExample" block:^(RdioSimpleApi *api, NSError *error) {
         
         [[RdioSimpleApi shared] me:^(NSDictionary *response, NSError *error) {
-            //...
+            
+            NSLog(@"%@ %@", response, error);
+            
         }];
         
         [[RdioSimpleApi shared] call:@"search" parameters:@{
@@ -27,6 +29,7 @@
                                                             @"types":@"Track"
                                                             } block:^(NSDictionary *response, NSError *error) {
                                                                 //...
+                                                                NSLog(@"%@ %@", response, error);
                                                             }];
 
         
