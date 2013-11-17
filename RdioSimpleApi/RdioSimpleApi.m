@@ -31,7 +31,7 @@ enum {
 
 /////
 
-static BOOL secure_store_credentials = TRUE;
+static BOOL secure_store_credentials = FALSE;
 
 @interface RdioSimpleApi ()
 {

@@ -132,7 +132,7 @@ static inline NSString * AFHMACSHA1Signature(NSURLRequest *request, NSString *co
     return AFEncodeBase64WithData([NSData dataWithBytes:digest length:CC_SHA1_DIGEST_LENGTH]);
 }
 
-NSString * const kAFOAuth1CredentialServiceName = @"Rdio API Credentials";
+NSString * const kAFOAuth1CredentialServiceName = @"RdioAPI Credentials1";
 
 static NSDictionary * AFKeychainQueryDictionaryWithIdentifier(NSString *identifier) {
     return @{(__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
