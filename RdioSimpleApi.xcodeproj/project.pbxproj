@@ -15,30 +15,17 @@
 		E4091CBD1837B46B00E4B8CF /* RdioSimpleApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4091CA01837B46B00E4B8CF /* RdioSimpleApi.framework */; };
 		E4091CC31837B46B00E4B8CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4091CC11837B46B00E4B8CF /* InfoPlist.strings */; };
 		E4091CC51837B46B00E4B8CF /* RdioSimpleApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CC41837B46B00E4B8CF /* RdioSimpleApiTests.m */; };
-		E4091CEA1837B4FE00E4B8CF /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CCF1837B4FE00E4B8CF /* AFHTTPClient.h */; };
 		E4091CEB1837B4FE00E4B8CF /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CD01837B4FE00E4B8CF /* AFHTTPClient.m */; };
-		E4091CEC1837B4FE00E4B8CF /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CD11837B4FE00E4B8CF /* AFHTTPRequestOperation.h */; };
 		E4091CED1837B4FE00E4B8CF /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CD21837B4FE00E4B8CF /* AFHTTPRequestOperation.m */; };
-		E4091CEE1837B4FE00E4B8CF /* AFImageRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CD31837B4FE00E4B8CF /* AFImageRequestOperation.h */; };
 		E4091CEF1837B4FE00E4B8CF /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CD41837B4FE00E4B8CF /* AFImageRequestOperation.m */; };
-		E4091CF01837B4FE00E4B8CF /* AFJSONRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CD51837B4FE00E4B8CF /* AFJSONRequestOperation.h */; };
 		E4091CF11837B4FE00E4B8CF /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CD61837B4FE00E4B8CF /* AFJSONRequestOperation.m */; };
-		E4091CF21837B4FE00E4B8CF /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CD71837B4FE00E4B8CF /* AFNetworkActivityIndicatorManager.h */; };
 		E4091CF31837B4FE00E4B8CF /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CD81837B4FE00E4B8CF /* AFNetworkActivityIndicatorManager.m */; };
-		E4091CF41837B4FE00E4B8CF /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CD91837B4FE00E4B8CF /* AFNetworking.h */; };
-		E4091CF51837B4FE00E4B8CF /* AFPropertyListRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CDA1837B4FE00E4B8CF /* AFPropertyListRequestOperation.h */; };
 		E4091CF61837B4FE00E4B8CF /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CDB1837B4FE00E4B8CF /* AFPropertyListRequestOperation.m */; };
-		E4091CF71837B4FE00E4B8CF /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CDC1837B4FE00E4B8CF /* AFURLConnectionOperation.h */; };
 		E4091CF81837B4FE00E4B8CF /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CDD1837B4FE00E4B8CF /* AFURLConnectionOperation.m */; };
-		E4091CF91837B4FE00E4B8CF /* AFXMLRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CDE1837B4FE00E4B8CF /* AFXMLRequestOperation.h */; };
 		E4091CFA1837B4FE00E4B8CF /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CDF1837B4FE00E4B8CF /* AFXMLRequestOperation.m */; };
-		E4091CFB1837B4FE00E4B8CF /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CE01837B4FE00E4B8CF /* UIImageView+AFNetworking.h */; };
 		E4091CFC1837B4FE00E4B8CF /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CE11837B4FE00E4B8CF /* UIImageView+AFNetworking.m */; };
-		E4091CFD1837B4FE00E4B8CF /* AFOAuth1Client.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CE31837B4FE00E4B8CF /* AFOAuth1Client.h */; };
 		E4091CFE1837B4FE00E4B8CF /* AFOAuth1Client.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CE41837B4FE00E4B8CF /* AFOAuth1Client.m */; };
-		E4091CFF1837B4FE00E4B8CF /* AFOAuth2Client.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CE61837B4FE00E4B8CF /* AFOAuth2Client.h */; };
 		E4091D001837B4FE00E4B8CF /* AFOAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CE71837B4FE00E4B8CF /* AFOAuth2Client.m */; };
-		E4091D011837B4FE00E4B8CF /* JCSSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CE81837B4FE00E4B8CF /* JCSSheetController.h */; };
 		E4091D021837B4FE00E4B8CF /* JCSSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CE91837B4FE00E4B8CF /* JCSSheetController.m */; };
 		E4091D651837B7DA00E4B8CF /* RdioSimpleApi.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CB01837B46B00E4B8CF /* RdioSimpleApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -251,20 +238,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4091CEE1837B4FE00E4B8CF /* AFImageRequestOperation.h in Headers */,
-				E4091CF01837B4FE00E4B8CF /* AFJSONRequestOperation.h in Headers */,
-				E4091CFD1837B4FE00E4B8CF /* AFOAuth1Client.h in Headers */,
 				E4091D651837B7DA00E4B8CF /* RdioSimpleApi.h in Headers */,
-				E4091CEA1837B4FE00E4B8CF /* AFHTTPClient.h in Headers */,
-				E4091CF71837B4FE00E4B8CF /* AFURLConnectionOperation.h in Headers */,
-				E4091CEC1837B4FE00E4B8CF /* AFHTTPRequestOperation.h in Headers */,
-				E4091CF21837B4FE00E4B8CF /* AFNetworkActivityIndicatorManager.h in Headers */,
-				E4091D011837B4FE00E4B8CF /* JCSSheetController.h in Headers */,
-				E4091CFF1837B4FE00E4B8CF /* AFOAuth2Client.h in Headers */,
-				E4091CFB1837B4FE00E4B8CF /* UIImageView+AFNetworking.h in Headers */,
-				E4091CF51837B4FE00E4B8CF /* AFPropertyListRequestOperation.h in Headers */,
-				E4091CF91837B4FE00E4B8CF /* AFXMLRequestOperation.h in Headers */,
-				E4091CF41837B4FE00E4B8CF /* AFNetworking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,8 +468,10 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RdioSimpleApi/RdioSimpleApi-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "RdioSimpleApi/RdioSimpleApi-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				KEEP_PRIVATE_EXTERNS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -518,8 +494,10 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RdioSimpleApi/RdioSimpleApi-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "RdioSimpleApi/RdioSimpleApi-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				KEEP_PRIVATE_EXTERNS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-weak_framework",

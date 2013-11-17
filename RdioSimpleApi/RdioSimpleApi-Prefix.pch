@@ -7,3 +7,43 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
+
+
+#define AFHTTPClient RD_AFHTTPClient
+#define AFQueryStringPair RD_AFQueryStringPair
+#define AFStreamingMultipartFormData RD_AFStreamingMultipartFormData
+#define AFHTTPClient RD_AFHTTPClient
+#define AFHTTPBodyPart RD_AFHTTPBodyPart
+#define AFMultipartBodyStream RD_AFMultipartBodyStream
+#define AFStreamingMultipartFormData RD_AFStreamingMultipartFormData
+#define AFMultipartBodyStream RD_AFMultipartBodyStream
+#define AFHTTPBodyPart RD_AFHTTPBodyPart
+#define AFHTTPRequestOperation RD_AFHTTPRequestOperation
+#define AFHTTPRequestOperation RD_AFHTTPRequestOperation
+#define AFImageRequestOperation RD_AFImageRequestOperation
+#define AFImageRequestOperation RD_AFImageRequestOperation
+#define AFJSONRequestOperation RD_AFJSONRequestOperation
+#define AFJSONRequestOperation RD_AFJSONRequestOperation
+#define AFNetworkActivityIndicatorManager RD_AFNetworkActivityIndicatorManager
+#define AFNetworkActivityIndicatorManager RD_AFNetworkActivityIndicatorManager
+#define AFPropertyListRequestOperation RD_AFPropertyListRequestOperation
+#define AFPropertyListRequestOperation RD_AFPropertyListRequestOperation
+#define AFURLConnectionOperation RD_AFURLConnectionOperation
+#define AFURLConnectionOperation RD_AFURLConnectionOperation
+#define AFXMLRequestOperation RD_AFXMLRequestOperation
+#define AFXMLRequestOperation RD_AFXMLRequestOperation
+#define UIImageView RD_UIImageView
+#define AFImageCache RD_AFImageCache
+#define UIImageView RD_UIImageView
+#define AFOAuth1Client RD_AFOAuth1Client
+#define AFOAuth1Token RD_AFOAuth1Token
+#define AFOAuth1Client RD_AFOAuth1Client
+#define AFOAuth1Token RD_AFOAuth1Token
+#define AFOAuth2Client RD_AFOAuth2Client
+#define AFOAuthCredential RD_AFOAuthCredential
+#define AFOAuth2Client RD_AFOAuth2Client
+#define AFOAuthCredential RD_AFOAuthCredential
+#define RD_JCSSheetController RD_RD_JCSSheetController
+#define JCSSheetController RD_JCSSheetController
+#define RdioCodeSheetController RD_RdioCodeSheetController
+

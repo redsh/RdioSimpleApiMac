@@ -30,16 +30,16 @@ App authorization happens via Safari. Once authorization is granted, Safari reop
     
     //Opens a Safari window that asks to connect the app to Rdio. Once authorization is granted, Safari reopens the app using the URL scheme RdioSimpleApiExample://.
     [[RdioSimpleApi shared] authenticateInBrowserWithURLScheme:@"RdioSimpleApiExample" block:^(RdioSimpleApi *api, NSError *error) {
-        [[RdioSimpleApi shared] me:^(NSDictionary *response, NSError *error) {
-        //...
-    }];
+        	[[RdioSimpleApi shared] me:^(NSDictionary *response, NSError *error) {
+        		//...
+    		}];
     
     	[[RdioSimpleApi shared] call:@"search" parameters:@{
                                                         @"query":@"get lucky",
                                                         @"types":@"Track"
                                                         } block:^(NSDictionary *response, NSError *error) {
         //...
-    }];
+    	}];
 
     }];
     
@@ -65,7 +65,18 @@ App authorization happens via Safari. Once authorization is granted, Safari reop
 4. Drag the framework from 'Linked Frameworks and Libraries' and drop it the 'Frameworks' folder of your App project tree.
 ![1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/drag_link.png)
 
+## Acknowledgements
+
+Uses:
+
+- AFNetworking, Copyright (c) 2011 Gowalla (http://gowalla.com/)
+
+- AFOAuth1Client.m Copyright (c) 2011 Mattt Thompson (http://mattt.me/)
+
+- AFOAuth2Client.h Copyright (c) 2012 Mattt Thompson (http://mattt.me/)
+
+- JCSSheetController Created by Abizer Nasir on 19/02/11, Based on SDSheetController by Steven Degutis https://github.com/sdegutis/SDSheetController
 
 
-
+Wrapper developed for the 'Enter the Dragon' demo at musichackday 2013 Boston, authors are not affiliated with Rdio.
 
