@@ -31,7 +31,7 @@ enum {
 
 /////
 
-static BOOL secure_store_credentials = FALSE;
+static BOOL secure_store_credentials = TRUE;
 
 @interface RdioSimpleApi ()
 {
@@ -164,17 +164,71 @@ static BOOL secure_store_credentials = FALSE;
 
 #pragma mark login status
 
+static char *servName = "Rdio OAuth";
+static UInt32 servNameLength = 9;
+
+- (void)storeCode:(NSString *)token forUsername:(NSString *)username
+{
+    if ([self getCodeForUsername:username] == NULL) { // Token not already stored.
+        SecKeychainAddGenericPassword(NULL,
+                                      servName,
+                                      servNameLength,
+                                      (UInt32)[username length],
+                                      [username UTF8String],
+                                      (UInt32)[token length],
+                                      [token UTF8String],
+                                      NULL);
+    } else { // We're about to modify the token.
+        SecKeychainItemRef ref = NULL;
+        SecKeychainFindGenericPassword(NULL, servName, servNameLength, (UInt32)[username length], [username UTF8String], NULL, NULL, &ref);
+        
+        SecKeychainItemModifyAttributesAndData(ref,
+                                               NULL,
+                                               (UInt32)[token length],
+                                               [token UTF8String]);
+        
+        CFRelease(ref);
+    }
+}
+
+- (NSString *)getCodeForUsername:(NSString *)username
+{
+    UInt32 len;
+    char *tok = malloc(sizeof(char[32]));
+    OSStatus stat = SecKeychainFindGenericPassword(NULL,
+                                                   servName,
+                                                   servNameLength,
+                                                   (UInt32)[username length],
+                                                   [username UTF8String],
+                                                   &len,
+                                                   (void **)&tok,
+                                                   NULL);
+    
+    if (stat == errSecItemNotFound) {
+        free(tok);
+        return NULL;
+    }
+    
+    tok[len] = '\0';
+    NSString *str = [[NSString alloc] initWithCString:tok encoding:NSUTF8StringEncoding] ;
+    free(tok);
+    
+    return str;
+}
+
 -(void)setAccessToken:(AFOAuth1Token*)token
 {
     client.accessToken = token;
     
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:token];
+    
     if(secure_store_credentials)
     {
-        [AFOAuth1Token storeCredential:token withIdentifier:@"rdio_token"];
+        [data base]
+        [self ]
     }
     else
     {
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:token];
         [[NSUserDefaults standardUserDefaults]setObject:data forKey:@"rdio_token"];
     }
 }
@@ -184,7 +238,9 @@ static BOOL secure_store_credentials = FALSE;
     AFOAuth1Token* tok = nil;
     if(secure_store_credentials)
     {
-        tok = [AFOAuth1Token retrieveCredentialWithIdentifier:@"rdio_token"];
+        
+        
+        
     }
     else
     {

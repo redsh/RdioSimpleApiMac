@@ -46,4 +46,8 @@
 #define RD_JCSSheetController RD_RD_JCSSheetController
 #define JCSSheetController RD_JCSSheetController
 #define RdioCodeSheetController RD_RdioCodeSheetController
+#define Lockbox RD_Lockbox
+
+
+
 
