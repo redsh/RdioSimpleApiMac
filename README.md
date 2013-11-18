@@ -77,6 +77,7 @@ Uses:
 
 - JCSSheetController Created by Abizer Nasir on 19/02/11, Based on SDSheetController by Steven Degutis https://github.com/sdegutis/SDSheetController
 
+- NSData+Base64.h Copyright 2009 Matt Gallagher.
 
 Wrapper developed for the 'Enter the Dragon' demo at musichackday 2013 Boston, authors are not affiliated with Rdio.
 

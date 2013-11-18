@@ -28,6 +28,8 @@
 		E4091D001837B4FE00E4B8CF /* AFOAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CE71837B4FE00E4B8CF /* AFOAuth2Client.m */; };
 		E4091D021837B4FE00E4B8CF /* JCSSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4091CE91837B4FE00E4B8CF /* JCSSheetController.m */; };
 		E4091D651837B7DA00E4B8CF /* RdioSimpleApi.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CB01837B46B00E4B8CF /* RdioSimpleApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E41CCA12183A2E6300881AB9 /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = E41CCA10183A2E6300881AB9 /* NSData+Base64.h */; };
+		E41CCA13183A2E6300881AB9 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E41CCA11183A2E6300881AB9 /* NSData+Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		E4091CE71837B4FE00E4B8CF /* AFOAuth2Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOAuth2Client.m; sourceTree = "<group>"; };
 		E4091CE81837B4FE00E4B8CF /* JCSSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSSheetController.h; sourceTree = "<group>"; };
 		E4091CE91837B4FE00E4B8CF /* JCSSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSSheetController.m; sourceTree = "<group>"; };
+		E41CCA10183A2E6300881AB9 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		E41CCA11183A2E6300881AB9 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 				E4091CE51837B4FE00E4B8CF /* AFOAuth2Client */,
 				E4091CE81837B4FE00E4B8CF /* JCSSheetController.h */,
 				E4091CE91837B4FE00E4B8CF /* JCSSheetController.m */,
+				E41CCA10183A2E6300881AB9 /* NSData+Base64.h */,
+				E41CCA11183A2E6300881AB9 /* NSData+Base64.m */,
 				E4091CB01837B46B00E4B8CF /* RdioSimpleApi.h */,
 				E4091CB11837B46B00E4B8CF /* RdioSimpleApi.m */,
 				E4091CAA1837B46B00E4B8CF /* Supporting Files */,
@@ -238,6 +244,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41CCA12183A2E6300881AB9 /* NSData+Base64.h in Headers */,
 				E4091D651837B7DA00E4B8CF /* RdioSimpleApi.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +347,7 @@
 				E4091CF81837B4FE00E4B8CF /* AFURLConnectionOperation.m in Sources */,
 				E4091CFC1837B4FE00E4B8CF /* UIImageView+AFNetworking.m in Sources */,
 				E4091CFA1837B4FE00E4B8CF /* AFXMLRequestOperation.m in Sources */,
+				E41CCA13183A2E6300881AB9 /* NSData+Base64.m in Sources */,
 				E4091CEF1837B4FE00E4B8CF /* AFImageRequestOperation.m in Sources */,
 				E4091CF61837B4FE00E4B8CF /* AFPropertyListRequestOperation.m in Sources */,
 				E4091D021837B4FE00E4B8CF /* JCSSheetController.m in Sources */,

@@ -12,6 +12,7 @@
 #import "AFOAuth2Client.h"
 #import "AFJSONRequestOperation.h"
 #import "JCSSheetController.h"
+#import "NSData+Base64.h"
 
 ///// sheet controller for entering rdio conf code
 
@@ -167,12 +168,13 @@ static BOOL secure_store_credentials = TRUE;
 static char *servName = "Rdio OAuth";
 static UInt32 servNameLength = 9;
 
-- (void)storeCode:(NSString *)token forUsername:(NSString *)username
+- (void)secStoreData:(NSString *)token forKey:(NSString *)username
 {
-    if ([self getCodeForUsername:username] == NULL) { // Token not already stored.
+    if ([self secDataWithKey:username] == NULL) { // Token not already stored.
         SecKeychainAddGenericPassword(NULL,
-                                      servName,
                                       servNameLength,
+                                      servName,
+                                      
                                       (UInt32)[username length],
                                       [username UTF8String],
                                       (UInt32)[token length],
@@ -180,7 +182,7 @@ static UInt32 servNameLength = 9;
                                       NULL);
     } else { // We're about to modify the token.
         SecKeychainItemRef ref = NULL;
-        SecKeychainFindGenericPassword(NULL, servName, servNameLength, (UInt32)[username length], [username UTF8String], NULL, NULL, &ref);
+        SecKeychainFindGenericPassword(NULL, servNameLength, servName, (UInt32)[username length], [username UTF8String], NULL, NULL, &ref);
         
         SecKeychainItemModifyAttributesAndData(ref,
                                                NULL,
@@ -191,13 +193,12 @@ static UInt32 servNameLength = 9;
     }
 }
 
-- (NSString *)getCodeForUsername:(NSString *)username
+- (NSString *)secDataWithKey:(NSString *)username
 {
     UInt32 len;
     char *tok = malloc(sizeof(char[32]));
     OSStatus stat = SecKeychainFindGenericPassword(NULL,
-                                                   servName,
-                                                   servNameLength,
+                                                   servNameLength, servName,
                                                    (UInt32)[username length],
                                                    [username UTF8String],
                                                    &len,
@@ -224,8 +225,7 @@ static UInt32 servNameLength = 9;
     
     if(secure_store_credentials)
     {
-        [data base]
-        [self ]
+        [self secStoreData:[data rd_base64EncodedString] forKey:@"rdio_oauth_user"];
     }
     else
     {
@@ -236,19 +236,22 @@ static UInt32 servNameLength = 9;
 -(void)onlyIfNotLoggedIn:(void(^)())block loggedInBlock:(void(^)())blocklogged
 {
     AFOAuth1Token* tok = nil;
+    NSData* d;
+    
     if(secure_store_credentials)
     {
-        
-        
-        
+        NSString* b64 = [self secDataWithKey:@"rdio_oauth_user"];
+        d = [NSData rd_dataFromBase64String:b64];
     }
     else
     {
-        NSData* d = [[NSUserDefaults standardUserDefaults]objectForKey:@"rdio_token"];
-        tok = [NSKeyedUnarchiver unarchiveObjectWithData:d];
+        d = [[NSUserDefaults standardUserDefaults]objectForKey:@"rdio_token"];
     }
-    if(tok)
+
+    if(d && [d length] > 1)
     {
+        tok = [NSKeyedUnarchiver unarchiveObjectWithData:d];
+        
         client.accessToken = tok;
         
         [self call:@"currentUser"
@@ -284,7 +287,7 @@ static UInt32 servNameLength = 9;
 {
     if(secure_store_credentials)
     {
-        [AFOAuth1Token deleteCredentialWithIdentifier:@"rdio_token"];
+        [self secStoreData:@"" forKey:@"rdio_oauth_user"];
     }
     else
     {
