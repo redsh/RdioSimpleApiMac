@@ -65,6 +65,41 @@ App authorization happens via Safari. Once authorization is granted, Safari reop
 4. Drag the framework from 'Linked Frameworks and Libraries' and drop it the 'Frameworks' folder of your App project tree.
 ![1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/drag_link.png)
 
+## Playing Songs
+
+![1](https://github.com/redsh/RdioSimpleApi/raw/master/Doc/play.png)
+
+Basic playback functionality is provided using a dirty WebKit WebView that interacts with the Rdio JS/SWF Web playback API. Sample usage can be found in the 'Example' project and the inferface for the component follows:
+
+```objective-c
+@interface RdioSimpleApiPlayerView : WebView
+
+- (void)loadPlayerFromURL:(NSString*)url;
+- (void)loadPlayerFromURL:(NSString*)url askingLoginWithCallbackURLScheme:(NSString*)urlScheme;
+
+- (void)play:(NSString*)track_id fromPosition:(double)positionInSeconds;
+- (void)play:(NSString*)track_id;
+
+- (void)play;
+- (void)pause;
+- (void)playOrPause;
+
+- (void)seek:(double)positionInSeconds;
+
+@property(nonatomic,copy) void(^blockLoadHTML)(RdioSimpleApiPlayerView* v, NSError* err);
+
+@property(nonatomic,copy) void(^blockSongInfo)(RdioSimpleApiPlayerView* v, NSString* artist, NSString* title, NSString* iconURL);
+@property(nonatomic,copy) void(^blockPlayStateChanged)(RdioSimpleApiPlayerView* v, int playStatus);
+@property(nonatomic,copy) void(^blockPositionChanged)(RdioSimpleApiPlayerView* v, double position, double duration);
+
+
+- (void)setPlayToken:(NSString*)pt;
+
+@end
+```
+
+
+
 ## Acknowledgements
 
 Uses:

@@ -19,6 +19,8 @@
 		E4D16A5D1839061A004A2B2B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4D16A5B1839061A004A2B2B /* InfoPlist.strings */; };
 		E4D16A5F1839061A004A2B2B /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D16A5E1839061A004A2B2B /* ExampleTests.m */; };
 		E4D16A78183907D2004A2B2B /* RdioSimpleApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D16A6E18390659004A2B2B /* RdioSimpleApi.framework */; };
+		E4D8FA65183E6E3D00153784 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8FA63183E6E3D00153784 /* PlayerViewController.m */; };
+		E4D8FA66183E6E3D00153784 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4D8FA64183E6E3D00153784 /* PlayerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,9 @@
 		E4D16A5C1839061A004A2B2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4D16A5E1839061A004A2B2B /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 		E4D16A6818390659004A2B2B /* RdioSimpleApi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RdioSimpleApi.xcodeproj; path = ../RdioSimpleApi.xcodeproj; sourceTree = "<group>"; };
+		E4D8FA62183E6E3D00153784 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		E4D8FA63183E6E3D00153784 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		E4D8FA64183E6E3D00153784 /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +150,9 @@
 				E4D16A491839061A004A2B2B /* MainMenu.xib */,
 				E4D16A4C1839061A004A2B2B /* Images.xcassets */,
 				E4D16A3B1839061A004A2B2B /* Supporting Files */,
+				E4D8FA62183E6E3D00153784 /* PlayerViewController.h */,
+				E4D8FA63183E6E3D00153784 /* PlayerViewController.m */,
+				E4D8FA64183E6E3D00153784 /* PlayerViewController.xib */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -289,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D16A3F1839061A004A2B2B /* InfoPlist.strings in Resources */,
+				E4D8FA66183E6E3D00153784 /* PlayerViewController.xib in Resources */,
 				E4D16A4D1839061A004A2B2B /* Images.xcassets in Resources */,
 				E4D16A451839061A004A2B2B /* Credits.rtf in Resources */,
 				E4D16A4B1839061A004A2B2B /* MainMenu.xib in Resources */,
@@ -312,6 +321,7 @@
 			files = (
 				E4D16A481839061A004A2B2B /* AppDelegate.m in Sources */,
 				E4D16A411839061A004A2B2B /* main.m in Sources */,
+				E4D8FA65183E6E3D00153784 /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

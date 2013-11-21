@@ -30,6 +30,8 @@
 		E4091D651837B7DA00E4B8CF /* RdioSimpleApi.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CB01837B46B00E4B8CF /* RdioSimpleApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E41CCA12183A2E6300881AB9 /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = E41CCA10183A2E6300881AB9 /* NSData+Base64.h */; };
 		E41CCA13183A2E6300881AB9 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E41CCA11183A2E6300881AB9 /* NSData+Base64.m */; };
+		E442F885183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E442F883183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h */; };
+		E442F886183E0C3A008ABE19 /* RdioSimpleApiPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E442F884183E0C3A008ABE19 /* RdioSimpleApiPlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		E4091CE91837B4FE00E4B8CF /* JCSSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSSheetController.m; sourceTree = "<group>"; };
 		E41CCA10183A2E6300881AB9 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		E41CCA11183A2E6300881AB9 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		E442F883183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdioSimpleApiPlayerView.h; sourceTree = "<group>"; };
+		E442F884183E0C3A008ABE19 /* RdioSimpleApiPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdioSimpleApiPlayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 				E4091CB01837B46B00E4B8CF /* RdioSimpleApi.h */,
 				E4091CB11837B46B00E4B8CF /* RdioSimpleApi.m */,
 				E4091CAA1837B46B00E4B8CF /* Supporting Files */,
+				E442F883183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h */,
+				E442F884183E0C3A008ABE19 /* RdioSimpleApiPlayerView.m */,
 			);
 			path = RdioSimpleApi;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			files = (
 				E41CCA12183A2E6300881AB9 /* NSData+Base64.h in Headers */,
 				E4091D651837B7DA00E4B8CF /* RdioSimpleApi.h in Headers */,
+				E442F885183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +360,7 @@
 				E4091D021837B4FE00E4B8CF /* JCSSheetController.m in Sources */,
 				E4091CED1837B4FE00E4B8CF /* AFHTTPRequestOperation.m in Sources */,
 				E4091CF31837B4FE00E4B8CF /* AFNetworkActivityIndicatorManager.m in Sources */,
+				E442F886183E0C3A008ABE19 /* RdioSimpleApiPlayerView.m in Sources */,
 				E4091CB21837B46B00E4B8CF /* RdioSimpleApi.m in Sources */,
 				E4091D001837B4FE00E4B8CF /* AFOAuth2Client.m in Sources */,
 				E4091CFE1837B4FE00E4B8CF /* AFOAuth1Client.m in Sources */,
@@ -476,7 +484,6 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RdioSimpleApi/RdioSimpleApi-Prefix.pch";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "RdioSimpleApi/RdioSimpleApi-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				KEEP_PRIVATE_EXTERNS = NO;
@@ -486,6 +493,8 @@
 					Security,
 					"-weak_framework",
 					SystemConfiguration,
+					"-weak_framework",
+					WebKit,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -502,7 +511,6 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RdioSimpleApi/RdioSimpleApi-Prefix.pch";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "RdioSimpleApi/RdioSimpleApi-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				KEEP_PRIVATE_EXTERNS = NO;
@@ -512,6 +520,8 @@
 					Security,
 					"-weak_framework",
 					SystemConfiguration,
+					"-weak_framework",
+					WebKit,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

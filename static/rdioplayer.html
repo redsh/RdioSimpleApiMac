@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>jquery.rdio test</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script src="jquery.rdio.min.js"></script>
+  <script type="text/javascript">
+  
+    var rd_playing = 0;
+    var rd_position = 0;
+    var duration = 1;
+    
+    var stopAt = -1;
+    var startAt = -1;
+    
+
+    play_resource = function(res_id,seek,duration) {
+    	 
+    	 $('#api').rdio().setVolume(1.0);
+    	 	
+    	 if(seek > 0.01)
+    	 {
+    	 	$('#api').rdio().play(res_id, {initialPosition: seek });
+    	 }
+    	 else
+    	 {
+    	 	$('#api').rdio().play(res_id);
+    	 }
+    	 
+    	 /*
+    	 //TODO stop at
+    	 if(duration>0.1)
+    	 {
+    	    stopAt = duration;
+    	    if(seek > 0.01) 
+    	    	stopAt = stopAt+seek;
+    	 }
+    	 else
+    	 {
+    	 	stopAt = -1;
+    	 }*/
+         //return res_id;
+    	 
+    };
+    preload_resource = function(res_id) {
+    
+     	 $('#api').rdio().setVolume(0.0);
+    	 $('#api').rdio().play(res_id);
+    	 $('#api').rdio().pause();
+    	 
+         return res_id;
+    	 
+    };
+    
+    seek_perc = function(where)
+    {
+    	$('#api').rdio().seek(where/100.*duration);
+    };
+
+    seek = function(where)
+    {
+    	$('#api').rdio().seek(where);
+    };
+    
+    pause = function(){
+    	$('#api').rdio().pause();
+    };
+
+    play = function(){
+    	$('#api').rdio().play();
+    };
+
+    playpause = function(){
+    	if(rd_playing)
+    	{
+    		$('#api').rdio().pause();
+    		return "play";
+    	}
+    	else
+    	{
+    		$('#api').rdio().play();
+    		return "pause";
+    	}
+    };
+    
+     // track the duration of the currently playing track
+     set_play_token = function(token)
+   	 {
+       console.log("ready!");
+        
+        
+      $('#api').bind('ready.rdio', function() {
+        //console.log("ready!");
+        //t35271676
+        play_resource('t30545172',0,0);
+        
+      });
+      $('#api').bind('playingTrackChanged.rdio', function(e, playingTrack, sourcePosition) {
+        if (playingTrack) {
+          if(typeof nativo != "undefined") nativo.setProgress_andDuration_(0, playingTrack.duration);
+          if(typeof nativo != "undefined") nativo.setTrack_andArtist_andIcon_(
+          	playingTrack.name,playingTrack.artist,playingTrack.icon);
+          duration = playingTrack.duration;
+          
+          $('#art').attr('src', playingTrack.icon);
+          //$('#track').text(playingTrack.name);
+          //$('#album').text(playingTrack.album);
+          //$('#artist').text(playingTrack.artist);
+
+        
+        }
+        });
+      $('#api').bind('positionChanged.rdio', function(e, position) {
+         //console.log('pos='+position)
+          
+        /*if(stopAt > -0.5)
+        {
+            if(position > stopAt)
+            {
+                console.log("stop!");
+        		$('#api').rdio().pause();
+        		stopAt = -1;
+        	}
+        }*/
+       
+        if(typeof nativo != "undefined") nativo.setProgress_andDuration_(position, duration);
+        
+        rd_position = position;
+        //$('#position').css('width', Math.floor(100*position/duration)+'%');
+      });
+      $('#api').bind('playStateChanged.rdio', function(e, playState) {
+        if(typeof nativo != "undefined") nativo.setPlayState_(playState);
+        
+        if (playState == 0) { // paused
+          rd_playing = 0;
+          $('#play').show();
+          $('#pause').hide();
+        } else {
+          rd_playing = 1;
+          $('#play').hide();
+          $('#pause').show();
+        }
+      });
+      // this is a valid playback token for localhost.
+      // but you should go get your own for your own domain.
+      $('#api').rdio(token);
+      //'GBtSjLCYAJ8NR2R2cHlzNHd5ZXg3Z2M0OXdoaDY3aHdrbmluZ3Jlc3NvLXBsYXllci5hcHBzcG90LmNvbUF1Rt95TZXu1GZsa6nTo8g=');
+
+
+      $('#previous').click(function() { $('#api').rdio().previous(); });
+      $('#play').click(function() { $('#api').rdio().play(); });
+      $('#pause').click(function() { $('#api').rdio().pause(); });
+      $('#next').click(function() { $('#api').rdio().next(); });
+      
+      //return token;
+    };
+    
+    
+  </script>
+</head>
+<body style="margin: 0px; padding: 0px; position: fixed; overflow-y: scroll;">
+  <div id="api" style="width:0px; height:0px;"></div>
+  <img id="art" src="" height="100%" width="100%" style="margin: 0px; padding: 0px;">
+  <!--
+  <div>
+    <div><b>Track: </b><span id="track"></span></div>
+    <div><b>Album: </b><span id="album"></span></div>
+    <div><b>Artist: </b><span id="artist"></span></div>
+    <div><b>Position: </b>
+      <span style="display:inline-block;width:200px;border:1px solid black;">
+        <span id="position" style="display:inline-block;background-color:#666">&nbsp;</span>
+      </span></div>
+    <div>
+      <button id="previous">&lt;&lt;</button>
+      <button id="play">|&gt;</button>
+      <button id="pause">||</button>
+      <button id="next">&gt;&gt;</button>
+    </div>
+  </div>
+  !-->
+  <a href="javascript:set_play_token('GBtSjRXO_____zhqejZ3eDVkdWpkdzNnNWp5NzV5Z2R5M2luZ3Jlc3NvLXBsYXllci5hcHBzcG90LmNvbdyxUkgkjdQDq-u7W0VUrd0=')">set</a>
+  
+  <a href="javascript:play_resource('t33065945',0,0)">test</a>
+  
+  
+</body>
+</html>
