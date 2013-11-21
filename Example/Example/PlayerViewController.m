@@ -53,7 +53,7 @@
     
     __unsafe_unretained PlayerViewController* ws = self;
     
-    [_playerView setBlockLoadHTML:^(RdioSimpleApiPlayerView * v, NSError * err) {
+    [_playerView setBlockRdioReady:^(RdioSimpleApiPlayerView * v, NSError * err) {
         
 #pragma warning check and reload in case of error!
         [ws.playerView play:@"t30545172"];

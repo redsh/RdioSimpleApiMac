@@ -95,22 +95,25 @@
      property of the 'window' object.   */
     [webView.windowScriptObject setValue:self forKey:@"nativo"];
     
-    if(self.blockLoadHTML)
-    {
-        self.blockLoadHTML(self, nil);
-    }
+    
 }
 
 - (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-    if(self.blockLoadHTML)
+    if(self.blockRdioReady)
     {
-        self.blockLoadHTML(self, error);
+        self.blockRdioReady(self, error);
     }
 }
 
 // JS interface
-
+- (void)rdioReady:(int)rd
+{
+    if(self.blockRdioReady)
+    {
+        self.blockRdioReady(self, nil);
+    }
+}
 - (void)setPlayState:(int)ps
 {
     if(self.blockPlayStateChanged)
@@ -146,23 +149,26 @@
 }
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)selector {
-	//NSLog(@"%@ received %@ for '%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(selector));
+	NSLog(@"%@ received %@ for '%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(selector));
     if (selector == @selector(setProgress:andDuration:)
         || selector == @selector(setPlayState:)
         || selector == @selector(setTrack:andArtist:andIcon:)
+        || selector == @selector(rdioReady:)
         ) {
         return NO;
     }
     return YES;
 }
 + (NSString *) webScriptNameForSelector:(SEL)sel {
-	//NSLog(@"%@ received %@ with sel='%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(sel));
+	NSLog(@"%@ received %@ with sel='%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(sel));
     if (sel == @selector(setProgress:andDuration:)) {
 		return @"setProgress_andDuration_";
     } else if(sel == @selector(setPlayState:)){
         return @"setPlayState_";
     } else if(sel == @selector(setTrack:andArtist:andIcon:)){
         return @"setTrack_andArtist_andIcon_";
+    } else if(sel == @selector(rdioReady:)){
+        return @"rdioReady_";
 	} else {
 		return nil;
 	}

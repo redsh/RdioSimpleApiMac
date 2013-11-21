@@ -24,10 +24,12 @@
 #error set your API keys here and remove this line!
  	[[RdioSimpleApi shared] setupWithKey:@"<YOUR APP's RDIO KEY HERE>" andSecret:@"<YOUR APP SECRET HERE>"];
 
-    //Opens a Safari window that asks to connect the app to Rdio. Once authorization is granted, Safari reopens the app using the URL scheme RdioSimpleApiExample://.
     
 #error TODO change the player URL to a page hosted by yourself
-    playerVC = [[PlayerViewController alloc]initWithPlayerURL:@"https://rawgithub.com/redsh/RdioSimpleApiMac/master/static/rdioplayer.html"];
+    playerVC = [[PlayerViewController alloc]initWithPlayerURL:@"http://rawgithub.com/redsh/RdioSimpleApiMac/master/static/rdioplayer.html"];
+    
+    //Opens a Safari window that asks to connect the app to Rdio. Once authorization is granted, Safari reopens the app using the URL scheme RdioSimpleApiExample://.
+    
     
     [self.window setContentView:playerVC.view];
     

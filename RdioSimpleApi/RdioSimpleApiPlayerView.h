@@ -23,7 +23,7 @@
 
 - (void)seek:(double)positionInSeconds;
 
-@property(nonatomic,copy) void(^blockLoadHTML)(RdioSimpleApiPlayerView* v, NSError* err);
+@property(nonatomic,copy) void(^blockRdioReady)(RdioSimpleApiPlayerView* v, NSError* err);
 
 @property(nonatomic,copy) void(^blockSongInfo)(RdioSimpleApiPlayerView* v, NSString* artist, NSString* title, NSString* iconURL);
 @property(nonatomic,copy) void(^blockPlayStateChanged)(RdioSimpleApiPlayerView* v, int playStatus);

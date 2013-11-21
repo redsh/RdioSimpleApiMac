@@ -90,6 +90,7 @@
         
         
       $('#api').bind('ready.rdio', function() {
+        if(typeof nativo != "undefined") nativo.rdioReady_(1);
         //console.log("ready!");
         //t35271676
         //play_resource('t30545172',0);
