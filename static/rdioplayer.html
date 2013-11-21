@@ -14,7 +14,7 @@
     var startAt = -1;
     
 
-    play_resource = function(res_id,seek,duration) {
+    play_resource = function(res_id,seek) {
     	 
     	 $('#api').rdio().setVolume(1.0);
     	 	
@@ -92,7 +92,7 @@
       $('#api').bind('ready.rdio', function() {
         //console.log("ready!");
         //t35271676
-        play_resource('t30545172',0,0);
+        //play_resource('t30545172',0);
         
       });
       $('#api').bind('playingTrackChanged.rdio', function(e, playingTrack, sourcePosition) {
@@ -178,9 +178,6 @@
     </div>
   </div>
   !-->
-  <a href="javascript:set_play_token('GBtSjRXO_____zhqejZ3eDVkdWpkdzNnNWp5NzV5Z2R5M2luZ3Jlc3NvLXBsYXllci5hcHBzcG90LmNvbdyxUkgkjdQDq-u7W0VUrd0=')">set</a>
-  
-  <a href="javascript:play_resource('t33065945',0,0)">test</a>
   
   
 </body>

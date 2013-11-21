@@ -27,7 +27,7 @@
     //Opens a Safari window that asks to connect the app to Rdio. Once authorization is granted, Safari reopens the app using the URL scheme RdioSimpleApiExample://.
     
 #error TODO change the player URL to a page hosted by yourself
-    playerVC = [[PlayerViewController alloc]initWithPlayerURL:@"https://raw.github.com/redsh/RdioSimpleApiMac/master/static/rdioplayer.html"];
+    playerVC = [[PlayerViewController alloc]initWithPlayerURL:@"https://rawgithub.com/redsh/RdioSimpleApiMac/master/static/rdioplayer.html"];
     
     [self.window setContentView:playerVC.view];
     
