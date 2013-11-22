@@ -30,7 +30,7 @@
 		E4091D651837B7DA00E4B8CF /* RdioSimpleApi.h in Headers */ = {isa = PBXBuildFile; fileRef = E4091CB01837B46B00E4B8CF /* RdioSimpleApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E41CCA12183A2E6300881AB9 /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = E41CCA10183A2E6300881AB9 /* NSData+Base64.h */; };
 		E41CCA13183A2E6300881AB9 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E41CCA11183A2E6300881AB9 /* NSData+Base64.m */; };
-		E442F885183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E442F883183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h */; };
+		E442F885183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E442F883183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E442F886183E0C3A008ABE19 /* RdioSimpleApiPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E442F884183E0C3A008ABE19 /* RdioSimpleApiPlayerView.m */; };
 /* End PBXBuildFile section */
 
@@ -251,8 +251,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E41CCA12183A2E6300881AB9 /* NSData+Base64.h in Headers */,
-				E4091D651837B7DA00E4B8CF /* RdioSimpleApi.h in Headers */,
 				E442F885183E0C3A008ABE19 /* RdioSimpleApiPlayerView.h in Headers */,
+				E4091D651837B7DA00E4B8CF /* RdioSimpleApi.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
