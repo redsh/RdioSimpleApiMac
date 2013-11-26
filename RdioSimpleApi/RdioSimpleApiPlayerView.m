@@ -149,7 +149,7 @@
 }
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)selector {
-	NSLog(@"%@ received %@ for '%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(selector));
+	//NSLog(@"%@ received %@ for '%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(selector));
     if (selector == @selector(setProgress:andDuration:)
         || selector == @selector(setPlayState:)
         || selector == @selector(setTrack:andArtist:andIcon:)
@@ -160,7 +160,7 @@
     return YES;
 }
 + (NSString *) webScriptNameForSelector:(SEL)sel {
-	NSLog(@"%@ received %@ with sel='%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(sel));
+	//NSLog(@"%@ received %@ with sel='%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(sel));
     if (sel == @selector(setProgress:andDuration:)) {
 		return @"setProgress_andDuration_";
     } else if(sel == @selector(setPlayState:)){
