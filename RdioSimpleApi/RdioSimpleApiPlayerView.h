@@ -29,7 +29,11 @@
 @property(nonatomic,copy) void(^blockPlayStateChanged)(RdioSimpleApiPlayerView* v, int playStatus);
 @property(nonatomic,copy) void(^blockPositionChanged)(RdioSimpleApiPlayerView* v, double position, double duration);
 
-
 - (void)setPlayToken:(NSString*)pt;
+
+@property(nonatomic,assign)BOOL ready;
+- (void)doWhenReady:(void(^)())block;
+- (void)reload;
+
 
 @end
