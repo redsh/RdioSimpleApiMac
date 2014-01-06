@@ -12,6 +12,7 @@
 typedef void(^RdioAuthBlock)(RdioSimpleApi* api, NSError* error);
 typedef void(^RdioAuthBlockInternal)(NSString* authorize_url, NSError* error);
 typedef void(^RdioResponseBlock)(NSDictionary* resp, NSError* err);
+typedef NSString* (^RdioTransformLoginURLBlock)(NSString* original_url);
 
 @interface RdioSimpleApi : NSObject
 
@@ -33,6 +34,8 @@ typedef void(^RdioResponseBlock)(NSDictionary* resp, NSError* err);
 - (void)beginAuthentication:(RdioAuthBlockInternal)block;
 
 - (void)beginAuthentication:(RdioAuthBlockInternal)block withCallbackUrl:(NSString*)callback_url;
+
+@property(nonatomic,copy)RdioTransformLoginURLBlock transformLoginURL_block;
 
 @end
 

@@ -38,7 +38,8 @@ static BOOL secure_store_credentials = TRUE;
 {
     AFOAuth1Client* client;
 }
-@property(nonatomic,copy) RdioAuthBlock urlLoginBlock;
+@property(nonatomic,copy)  RdioAuthBlock urlLoginBlock;
+@property(nonatomic,strong)AFOAuth1Token* authAccessToken;
 
 @end
 
@@ -54,6 +55,11 @@ static BOOL secure_store_credentials = TRUE;
             if(error == nil && authorize_url)
             {
                 self.urlLoginBlock = block;
+                
+                if(self.transformLoginURL_block)
+                {
+                    authorize_url = self.transformLoginURL_block(authorize_url);
+                }
                 
                 [[NSWorkspace sharedWorkspace] openURLs:@[[NSURL URLWithString:authorize_url]] withAppBundleIdentifier:@"com.apple.Safari" options:nil additionalEventParamDescriptor:nil launchIdentifiers:nil];
                 
@@ -81,6 +87,10 @@ static BOOL secure_store_credentials = TRUE;
             
             if(error == nil && authorize_url)
             {
+                if(self.transformLoginURL_block)
+                {
+                    authorize_url = self.transformLoginURL_block(authorize_url);
+                }
                 [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:authorize_url]];
             }
             else
@@ -120,7 +130,7 @@ static BOOL secure_store_credentials = TRUE;
              parameters:@{@"oauth_callback" : callback_url}
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     
-                    client.accessToken = [[AFOAuth1Token alloc]initWithQueryString:operation.responseString];
+                    self.authAccessToken = [[AFOAuth1Token alloc]initWithQueryString:operation.responseString];
                     
                     NSDictionary* resp = [self parseQSL:operation.responseString];
                     NSString* token       = [resp objectForKey:@"oauth_token"];
@@ -146,6 +156,9 @@ static BOOL secure_store_credentials = TRUE;
 {
     [client setDefaultHeader:@"Accept" value:@""];
     
+    AFOAuth1Token* old_accessToken = client.accessToken;
+    client.accessToken = self.authAccessToken;
+    
     [self signedRequest:@"oauth/access_token" parameters:@{@"oauth_verifier":verifier} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self setAccessToken:[[AFOAuth1Token alloc] initWithQueryString:operation.responseString]];
@@ -154,6 +167,7 @@ static BOOL secure_store_credentials = TRUE;
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //NSLog(@"completeAuth %@",error);
+        client.accessToken = old_accessToken;
         if(block) block(nil, error);
     }];
 }
